@@ -1,14 +1,33 @@
 const express = require("express");
-require("dotenv").config();
+const {PORT} = require("./src/config/env");
+const {API_ROUTER} = require("./src/config/env");
+const ApiRouter = require("./src/Routers");
+const db = require("./src/config/db");
+const shop = require("./src/Model/Schema/Shop");
 
 const app = express();
-const port = process.emit.PORT
+db.connect();
+
+
 app.use(express.json())
 
 app.get("/",(req,res)=>{
-    res.send("server started")
+    res.send("server started"); 
 })
 
-app.listen(port,()=>{
-    console.log("server start at ",port)
+
+
+app.post("/test",(req,res)=>{
+    shop.create(req.body);
+    res.send("route test"); 
+})
+
+
+
+
+
+app.use(API_ROUTER,ApiRouter);
+
+app.listen(PORT,()=>{
+    console.log("server start at ", PORT)
 })
