@@ -7,16 +7,11 @@ const shop = require("./src/Model/Schema/Shop");
 
 const app = express();
 db.connect();
-
-
 app.use(express.json())
 
 app.get("/",(req,res)=>{
     res.send("server started"); 
 })
-
-
-
 app.post("/test",(req,res)=>{
     shop.create(req.body);
     res.send("route test"); 
