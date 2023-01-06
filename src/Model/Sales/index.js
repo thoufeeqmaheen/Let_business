@@ -12,7 +12,7 @@ const getSaleById =()=>{
     return Sales.findById(id)
     .populate("user","name phone")
     .populate("shop","name");
-
+};
 module.exports = {
     createSale,
     getSale,

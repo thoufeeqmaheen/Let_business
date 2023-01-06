@@ -17,10 +17,10 @@ const sales = mongoose.Schema(
             ref:"shop",
         },
     
-    {
+    
         timestamps : true,
     },
-}
+
 
 );
 module.exports = mongoose.model("sales",sales)
