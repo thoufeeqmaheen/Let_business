@@ -7,7 +7,12 @@ const getUser= async()=>{
 };
 
 const getUserById= (id)=>{
-    return User.findById(id);
+    return User.findById(
+        id,
+        {
+            name:1,
+            phone:1,
+        });
 };
 const getUserByPhone= (phone)=>{
     return User.findOne({phone});
@@ -18,8 +23,9 @@ const createUser =async (user)=>{
         password: await hashPassword(user.password),
     });
 };
-const updateUser =(id,user)=>{
-    return User.findByIdAndUpdate(id,user);
+const updateUser =async (id,user)=>{
+    await User.findByIdAndUpdate(id,user);
+    return getUserById(id);
 };
 const deleteUser =(id)=>{
     return User.findByIdAndUpdate(id, {
