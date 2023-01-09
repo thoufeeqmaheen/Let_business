@@ -5,9 +5,7 @@ const { getShops,
     createShop,
     updateShop,
     deleteShop,
-    addProduct,
-    removeProduct,
-    getProducts} = require("../../Model/Shop");
+    } = require("../../Model/Shop");
 
 router.post("/",async(req,res)=>{
     const result = await createShop(req.body);
