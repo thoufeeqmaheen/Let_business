@@ -7,12 +7,25 @@ const shopFilter = {name : 1,
     address : 1
 
 };
+
+const getShopList = ()=>{
+    return Shop.find({
+        deleted : false,
+        user : id 
+    },
+    shopFilter
+    ).populate("user");
+    };
+
 const getShops = (id)=>{
 return Shop.find({
     deleted : false,
     user : id 
-},shopFilter).populate("user");
+},
+shopFilter
+).populate("user");
 };
+
 const getShopById = (id)=>{
     return Shop.findById(id).populate("user");
 };
@@ -52,6 +65,7 @@ module.exports = {
     deleteShop,
     addProduct,
     removeProduct,
-    getProducts
+    getProducts,
+    getShopList,
 
 };
