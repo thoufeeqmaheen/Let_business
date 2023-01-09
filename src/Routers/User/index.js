@@ -8,7 +8,7 @@ router.get("/",async(req,res)=>{
     res.send(result);
 });
 
-router.put("/",async(req,res)=>{
+router.put("/",validationMiddleware(UseUpdateSchema),async(req,res)=>{
     const result = await updateUser(req.user.id,req.body);
     res.send(result)
 });
