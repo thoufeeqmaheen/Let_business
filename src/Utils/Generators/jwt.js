@@ -1,13 +1,8 @@
 const jwt = require ("jsonwebtoken");
- const{JWT_SECRET} = reuire("../../Config/env");
+ const{JWT_SECRET} = require("../../Config/env");
 
  const createToken = (id) => {
-   const token = jwt.sign(
-    {
-        id,
-    },
-    JWT_SECRET
-   );
+   const token = jwt.sign({id,},JWT_SECRET);
    return token;
 };
 
