@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUserById } = require("../../Model/Shop");
+const { getUserById,updateUser,deleteUser } = require("../../Model/Shop");
 
 const router = express.Router();
 
