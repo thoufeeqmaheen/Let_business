@@ -1,5 +1,5 @@
 const express = require("express");
-
+const{createSale,getSale,getSaleById} = require("../../Model/Sales");
 const router = express.Router();
 
 router.post("/",async (req,res)=>{
@@ -9,8 +9,6 @@ router.post("/",async (req,res)=>{
     });
     res.send(result);
 });
-
-
 
 router.get("/",async (req,res)=>{
     const result = await getSale();
