@@ -16,4 +16,5 @@ const getSaleById =()=>{
 module.exports = {
     createSale,
     getSale,
+    getSaleById,
 };

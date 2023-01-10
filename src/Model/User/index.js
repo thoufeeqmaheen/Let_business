@@ -1,4 +1,5 @@
-const User = require("../schema/shop");
+const {hashPassword}= require("../../Utils/Generators/bcrypt");
+const User = require("../schema/User");
 
 const getUser= async()=>{
     return User.find({
