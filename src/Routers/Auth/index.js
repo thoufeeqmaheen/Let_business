@@ -22,7 +22,7 @@ res.send(response);
 router.post("/login",async (req,res)=>{
     const user = await getUserByPhone(req.body.phone);
     if(!user) return res.status(400).send("invalid credentials");
-    if (!(user.password !==req.body.password)){
+    if (!(await comparePassword (req.body.password,user.password))){
         return res.status(400).send("invalid credentials");
     }
 
