@@ -9,3 +9,4 @@ const validationMiddleware = Schema=> (req,res,next)=>{
    }
    next();
 };
+module.exports=validationMiddleware;

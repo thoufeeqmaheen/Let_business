@@ -2,6 +2,7 @@ const express = require("express");
 const{createUser,getUserByPhone}=require("../../Model/User");
 const{comparePassword}= require("../../Utils/Generators/bcrypt");
 const{createToken}= require("../../Utils/Generators/jwt");
+const validationMiddleware = require("../../Utils/Middleware/validationMiddleware");
 const{SignUpSchema}=require("../../Validation/User");
 const{phoneExists}=require("./validation");
 

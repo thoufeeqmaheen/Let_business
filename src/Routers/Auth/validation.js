@@ -1,4 +1,4 @@
-const {getUserByPhone} = require("../..)/Model/User");
+const {getUserByPhone} = require("../../Model/User");
 
 
   const phoneExists = async(req,res,next)=>{
