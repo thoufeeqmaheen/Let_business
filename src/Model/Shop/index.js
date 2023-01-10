@@ -1,6 +1,5 @@
 const Product = require("../Schema/Product");
 const Shop = require("../Schema/Shop");
-const shop = require("../Schema/Shop");
 
 const shopFilter = {name : 1,
     phone : 1,
@@ -48,7 +47,7 @@ const addProduct = async(id,product)=>{
 };
 const removeProduct = (id,products)=>{
     return Shop.findById(id,{
-        $pull: {products:product}
+        $pull: {products: product}
     });
 };
 const getProducts = async (id)=>{

@@ -12,7 +12,8 @@ router.post("/",async (req,res)=>{
 
 router.get("/",async (req,res)=>{
     const result = await getSale();
-    const data = result.map((d)=>({...d._doc,
+    const data = result.map((d)=>({
+        ...d._doc,
         price:d._doc.productsList.reduce(
         (a,p)=>a+p.quantity*p.pricePerQuantuty,
         0
